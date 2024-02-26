@@ -29,4 +29,11 @@ public class Client {
 
     @Column(name = "birthday")
     private Date birthday;
+
+    public Client(String name, String phone, String email, Date birthday) {
+        this.name = name;
+        this.phone = phone;
+        this.email = email;
+        this.birthday = birthday;
+    }
 }

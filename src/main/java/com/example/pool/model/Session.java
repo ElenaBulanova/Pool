@@ -33,7 +33,7 @@ public class Session {
 
     @ManyToOne
     @JoinColumn(name = "table_id")
-    PoolTable tabl;
+    PoolTable poolTable;
 
 //    @ManyToOne
 //    @JoinColumn(name = "session_fine_id")

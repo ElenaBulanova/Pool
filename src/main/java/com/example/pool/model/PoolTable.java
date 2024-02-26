@@ -9,7 +9,7 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@jakarta.persistence.Table(name = "table_t")
+@Table(name = "table_t")
 public class PoolTable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

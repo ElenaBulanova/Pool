@@ -25,7 +25,7 @@ public class Order {
     private Date startTime;
 
     @Column(name = "duration")
-    private Integer duration;
+    private Double duration;
 
     @ManyToOne
     @JoinColumn(name = "client_id")
@@ -33,7 +33,7 @@ public class Order {
 
     @ManyToOne
     @JoinColumn(name = "table_id")
-    PoolTable table;
+    PoolTable poolTable;
 
 
 }
