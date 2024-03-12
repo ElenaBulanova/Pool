@@ -1,8 +1,8 @@
 package com.example.pool.model;
 
-import jakarta.persistence.*;
 import lombok.*;
 
+import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
@@ -35,7 +35,4 @@ public class Session {
     @JoinColumn(name = "table_id")
     PoolTable poolTable;
 
-//    @ManyToOne
-//    @JoinColumn(name = "session_fine_id")
-//    SessionFines sessionFines;
 }

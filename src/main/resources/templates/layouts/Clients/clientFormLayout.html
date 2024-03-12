@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<th:block th:fragment="clientFormLayout(client, clients)">
+    <form class="form" th:object="${client}" method="post" th:action="@{${client.id == null ? '/admin/clients' : '/admin/clients/' + client.id}}">
+        <input type="text" class="inputText" placeholder="Имя" th:field="*{id}" hidden>
+        <input type="text" class="inputText" placeholder="Имя" th:field="*{name}">
+        <input type="text" class="inputText" placeholder="Телефон" th:field="*{phone}">
+        <input type="text" class="inputText" placeholder="Email" th:field="*{email}">
+<!--        <input type="text" class="inputText" placeholder="ДР" th:field="*{birthday}">-->
+<!--        th:text="${#dates.format(client.birthday, 'dd-MM-yyyy')}-->
+
+        <input type="date" class="inputText" placeholder="ДР" th:field="*{birthday}">
+<!--        <input type="date" class="inputText" placeholder="ДР" th:field="*{#dates.format(birthday, 'dd-MM-yyyy')}">-->
+
+        <input type="submit" class="inputSubmit" value="Добавить / изменить">
+    </form>
+</th:block>
+</body>
+</html>

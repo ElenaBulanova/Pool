@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<th:block th:fragment="tableTableLayout(tables)" th:if="${tables != null}">
+    <table class="table">
+        <tr>
+            <th>id</th>
+            <th>Название</th>
+            <th>Цена</th>
+            <th>Изменить</th>
+            <th>Удалить</th>
+        </tr>
+        <tr th:each="table: ${tables}">
+            <td>[[${table.id}]]</td>
+            <td>[[${table.name}]]</td>
+            <td>[[${table.price}]]</td>
+            <td><a class="a_edit" th:href="@{'/admin/pooltables/' + ${table.id}}">изменить</a></td>
+<!--            <td><a class="a_edit" th:href="@{'/admin/pooltables/delete' + ${table.id}}">удалить</a></td>-->
+            <td>
+                <form th:method="post" th:action="@{'/admin/pooltables/delete/' + ${table.id}}" >
+                    <input type="submit" class="a_edit" value="удалить">
+                </form>
+            </td>
+        </tr>
+    </table>
+    <form th:method="post" th:action="@{'/admin/pooltables/back'}" >
+        <input type="submit" class="a_button_back" value="Назад">
+    </form>
+
+</th:block>
+</body>
+</html>

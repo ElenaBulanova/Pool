@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+</head>
+<body>
+<div class="container">
+    <th:block th:insert="~{layouts/header.html::headerLayout}"></th:block>
+    <div class="modal">
+        <form class="form" method="post" action="/user/register">
+<!--            <input type="text" class="inputText" placeholder="login" name="username">-->
+<!--            <span th:if="${error != null && error =='login'}">такой пользователь уже зарегистрирован</span>-->
+<!--            <input type="text" class="inputText" placeholder="password" name="password">-->
+<!--            <input type="text" class="inputText" placeholder="repeat password" name="passwordRepeat">-->
+<!--            <span th:if="${error != null && error =='password'}">пароли не совпадают</span>-->
+<!--            <input type="submit" class="inputSubmit" value="sing up">-->
+        </form>
+    </div>
+</div>
+</body>
+</html>

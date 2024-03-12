@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<th:block th:fragment="fineFormLayout(fine, fines)">
+    <form class="form" th:object="${fine}" method="post" th:action="@{${fine.id == null ? '/admin/fines' : '/admin/fines/' + fine.id}}">
+        <input type="text" class="inputText" placeholder="название" th:field="*{id}" hidden>
+        <input type="text" class="inputText" placeholder="название" th:field="*{name}">
+        <input type="text" class="inputText" placeholder="цена" th:field="*{cost}">
+
+        <input type="submit" class="inputSubmit" value="Добавить / изменить">
+    </form>
+</th:block>
+</body>
+</html>

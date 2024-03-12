@@ -1,9 +1,9 @@
 package com.example.pool.model;
 
-import jakarta.persistence.*;
-import jakarta.persistence.Table;
+
 import lombok.*;
 
+import javax.persistence.*;
 import java.util.List;
 
 @Getter
@@ -22,7 +22,7 @@ public class Fine {
     private String name;
 
     @Column(name = "cost")
-    private int cost;
+    private Integer cost;
 
 
 

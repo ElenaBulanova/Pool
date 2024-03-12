@@ -1,9 +1,8 @@
 package com.example.pool.model;
 
-import jakarta.persistence.*;
-import jakarta.persistence.Table;
 import lombok.*;
 
+import javax.persistence.*;
 import java.util.Date;
 
 @Getter
@@ -28,6 +27,7 @@ public class Client {
     private String email;
 
     @Column(name = "birthday")
+    @Temporal(TemporalType.DATE)
     private Date birthday;
 
     public Client(String name, String phone, String email, Date birthday) {
@@ -36,4 +36,15 @@ public class Client {
         this.email = email;
         this.birthday = birthday;
     }
+
+    @Override
+    public String toString() {
+        return "Client{" +
+                "name='" + name + '\'' +
+                ", phone='" + phone + '\'' +
+                ", email='" + email + '\'' +
+                ", birthday=" + birthday +
+                '}';
+    }
+
 }

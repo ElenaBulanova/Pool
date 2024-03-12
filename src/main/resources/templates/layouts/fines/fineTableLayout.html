@@ -1,0 +1,29 @@
+<body>
+<th:block th:fragment="fineTableLayout(fines)" th:if="${fines != null}">
+    <table class="table">
+        <tr>
+            <th>id</th>
+            <th>Название</th>
+            <th>Цена</th>
+            <th>Изменить</th>
+            <th>Удалить</th>
+        </tr>
+        <tr th:each="fine: ${fines}">
+            <td>[[${fine.id}]]</td>
+            <td>[[${fine.name}]]</td>
+            <td>[[${fine.cost}]]</td>
+            <td><a class="a_edit" th:href="@{'/admin/fines/' + ${fine.id}}">изменить</a></td>
+            <td>
+                <form th:method="post" th:action="@{'/admin/fines/delete/' + ${fine.id}}" >
+                    <input type="submit" class="a_edit" value="удалить">
+                </form>
+            </td>
+        </tr>
+    </table>
+    <form th:method="post" th:action="@{'/admin/fines/back'}" >
+        <input type="submit" class="a_button_back" value="Назад">
+    </form>
+
+</th:block>
+</body>
+</html>

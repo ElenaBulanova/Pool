@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Clients</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+</head>
+<body>
+
+<div class="modal">
+    <h1>Управление клиентами</h1>
+    <th:block th:insert="~{layouts/clients/clientFormLayout.html::clientFormLayout(${client}, ${clients})}" />
+
+    <th:block th:insert="~{layouts/clients/clientTableLayout.html::clientTableLayout(${clients})}" />
+</div>
+
+</body>
+</html>

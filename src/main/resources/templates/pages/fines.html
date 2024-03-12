@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta charset="UTF-8">
+  <title>Fines</title>
+  <link rel="stylesheet" href="/styles/styles.css">
+</head>
+<body>
+
+<div class="modal">
+  <h1>Управление штрафами</h1>
+  <th:block th:insert="~{layouts/fines/fineFormLayout.html::fineFormLayout(${fine}, ${fines})}" />
+
+  <th:block th:insert="~{layouts/fines/fineTableLayout.html::fineTableLayout(${fines})}" />
+</div>
+
+</body>
+</html>

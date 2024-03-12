@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <header th:fragment="headerLayout">
+        <nav>
+            <ul>
+                <li th:if="${auth.equals('false')}"><a class="a_button_login" href="/login">Вход / регистрация</a></li>
+                <li th:unless="${auth.equals('false')}"><a class="a_button_login" href="/profile">[[${userName}]]</a></li>
+            </ul>
+        </nav>
+    </header>
+</body>
+</html>

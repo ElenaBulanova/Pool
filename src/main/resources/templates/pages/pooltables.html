@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>PoolTables</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+</head>
+<body>
+<!--<div class="container">-->
+
+    <div class="modal">
+        <h1>Управление столами</h1>
+        <th:block th:insert="~{layouts/pooltables/tableFormLayout.html::tableFormLayout(${table}, ${tables})}" />
+
+        <th:block th:insert="~{layouts/pooltables/tableTableLayout.html::tableTableLayout(${tables})}" />
+    </div>
+<!--</div>-->
+</body>
+</html>
